@@ -146,3 +146,11 @@ def predict(ticker: str):
     drift = (last - prev) * 0.3
     pred = last + drift
     return {"ticker": ticker, "next_day_close": float(pred)}
+
+    # backend/app.py
+# ... all your FastAPI code above ...
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("backend.app:app", host="127.0.0.1", port=8000, reload=True)
+
